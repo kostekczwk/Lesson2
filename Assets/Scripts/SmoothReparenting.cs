@@ -38,6 +38,7 @@ public class SmoothReparenting : MonoBehaviour
             timeElapsed += Time.deltaTime;
 
             yield return null;
+            //yield return new WaitForSeconds(0.1f);
         }
 
         InstantReparenting(newParentTransform);
