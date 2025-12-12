@@ -6,7 +6,8 @@ public class ClearCounter : BaseCounter
 
     public override void Interact(Player player)
     {
-        if (!HasKitchenObject())
+        // ClearCounter not has KitchenObject
+        if (!this.HasKitchenObject())
         {
             if (player.HasKitchenObject())
             {
@@ -17,17 +18,31 @@ public class ClearCounter : BaseCounter
                 // Player not carrying anything
             }
         }
+        // ClearCounter has KitchenObject
         else
         {
-            // ClearCounter has KitchenObject
-
             if (player.HasKitchenObject())
             {
-                // ClearCounter has KitchenObject & player carrying KitchenObject, nothing to do
+                // Player has PlateKitchenObject, add counter object to plate
+                if (player.GetKitchenObject().TryGetPlate(out PlateKitchenObject plateKitchenObject))
+                {
+                    if (plateKitchenObject.TryAddIngredient(this.GetKitchenObject().GetKitchenObjectSO()))
+                    {
+                        this.GetKitchenObject().DestroySelf();
+                    }
+                }
+                // Counter has PlateKitchenObject, add player object to plate
+                else if (this.GetKitchenObject().TryGetPlate(out plateKitchenObject))
+                {
+                    if (plateKitchenObject.TryAddIngredient(player.GetKitchenObject().GetKitchenObjectSO()))
+                    {
+                        player.GetKitchenObject().DestroySelf();
+                    }
+                }
             }
             else
             {
-                GetKitchenObject().SetKitchenObjectParent(player);
+                this.GetKitchenObject().SetKitchenObjectParent(player);
             }
         }
     }
