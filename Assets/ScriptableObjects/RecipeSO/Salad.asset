@@ -13,9 +13,6 @@ MonoBehaviour:
   m_Name: Salad
   m_EditorClassIdentifier: Assembly-CSharp::RecipeSO
   kitchenObjectSOList:
-  - {fileID: 11400000, guid: 922002686a6f5014d90bb5f313f79578, type: 2}
-  - {fileID: 11400000, guid: 850288c8fa40c2f428a8ac78031c9e98, type: 2}
-  - {fileID: 11400000, guid: 21b3bd70fb3e934439aabaf1fee74725, type: 2}
   - {fileID: 11400000, guid: d44bf638431bd1a47b46c33fa46d21d5, type: 2}
   - {fileID: 11400000, guid: e5688b444638da44794c1b509ed642ad, type: 2}
-  recipeName: MegaBurger
+  recipeName: Salad
