@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class PlateKitchenObject : KitchenObject
 {
+    public static event EventHandler<OnIngredientAddedEventArgs> OnAnyIngredientAdded;
     public event EventHandler<OnIngredientAddedEventArgs> OnIngredientAdded;
+
     public class OnIngredientAddedEventArgs : EventArgs
     {
         public KitchenObjectSO kitchenObjectSO;
@@ -36,7 +38,9 @@ public class PlateKitchenObject : KitchenObject
         }
 
         kitchenObjectSOList.Add(kitchenObjectSO);
+
         OnIngredientAdded?.Invoke(this, new OnIngredientAddedEventArgs { kitchenObjectSO = kitchenObjectSO });
+        OnAnyIngredientAdded?.Invoke(this, new OnIngredientAddedEventArgs { kitchenObjectSO = kitchenObjectSO });
 
         return true;
     }

@@ -1,7 +1,10 @@
+using System;
 using UnityEngine;
 
 public class TrashCounter : BaseCounter
 {
+    public static event EventHandler OnAnyObjectTrashed;
+
     public override void Interact(Player player)
     {
         if (!player.HasKitchenObject())
@@ -13,6 +16,8 @@ public class TrashCounter : BaseCounter
         KitchenObject kitchenObject = player.GetKitchenObject();
         kitchenObject.OnReparentingCompleted += KitchenObject_OnReparentingCompleted;
         kitchenObject.SetKitchenObjectParent(this);
+
+        OnAnyObjectTrashed?.Invoke(this, EventArgs.Empty);
     }
 
     private void KitchenObject_OnReparentingCompleted(object sender, System.EventArgs e)

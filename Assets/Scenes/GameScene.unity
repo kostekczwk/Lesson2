@@ -1937,6 +1937,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1034873390}
   - component: {fileID: 1034873391}
+  - component: {fileID: 1034873392}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -1979,6 +1980,18 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   kitchenObjectHoldPoint: {fileID: 1507693777}
+--- !u!114 &1034873392
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1034873389}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dc21eeeb9cf52d74fb79ea1588447db9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerSound
 --- !u!4 &1046654286 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6536813089186719393, guid: e38bd1b9944533b4691b9fe51e474ad6, type: 3}
@@ -3405,6 +3418,51 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1224496649850294663, guid: 52c25868cb4490347b068d91ff3f352d, type: 3}
   m_PrefabInstance: {fileID: 998179431}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1863262652
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1863262654}
+  - component: {fileID: 1863262653}
+  m_Layer: 0
+  m_Name: SoundManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1863262653
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1863262652}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9d2f9d4b36ba594a8bc8bf2269b42aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::SoundManager
+  audioClipRefsSO: {fileID: 11400000, guid: cde6974c441b95f49aa2aad98401389e, type: 2}
+--- !u!4 &1863262654
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1863262652}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1897754827
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4055,3 +4113,4 @@ SceneRoots:
   - {fileID: 1808636118}
   - {fileID: 17192900}
   - {fileID: 1527583016}
+  - {fileID: 1863262654}

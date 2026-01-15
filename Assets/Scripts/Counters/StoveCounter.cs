@@ -194,11 +194,6 @@ public class StoveCounter : BaseCounter, IHasProgress
         });
     }
 
-    private bool HasBurningRecipeWithInput(KitchenObjectSO inputKitchenObjectSO)
-    {
-        return GetBurningRecipeSOFromInput(inputKitchenObjectSO) != null;
-    }
-
     private BurningRecipeSO GetBurningRecipeSOFromInput(KitchenObjectSO inputKitchenObjectSO)
     {
         if (inputKitchenObjectSO != null)
